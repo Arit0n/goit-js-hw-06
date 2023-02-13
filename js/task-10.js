@@ -9,17 +9,14 @@ const refs = {
 };
 const createBox = (number) => {
   let arrayBox = [];
-  if (number >= refs.input.min && number <= refs.input.max) {
-    for (let i = 0; i <= number; i += 1) {
-      const div = document.createElement("div");
-      div.style.background = getRandomHexColor();
-      div.style.width = `${30 + 10 * i}px`;
-      div.style.height = `${30 + 10 * i}px`;
-      arrayBox.push(div);
-    }
-  } else {
-    alert("Введіть чило від 1 до 100");
+  for (let i = 0; i <= number; i += 1) {
+    const div = document.createElement("div");
+    div.style.background = getRandomHexColor();
+    div.style.width = `${30 + 10 * i}px`;
+    div.style.height = `${30 + 10 * i}px`;
+    arrayBox.push(div);
   }
+
   return arrayBox;
 };
 const destroyBox = () => {
@@ -34,4 +31,3 @@ refs.buttonCreate.addEventListener("click", () => {
 refs.buttonDestroy.addEventListener("click", () => {
   destroyBox();
 });
-console.log(refs.input.max);
