@@ -12,4 +12,4 @@ function eventInput() {
     refs.nameLabel.textContent = refs.input.value;
   }
 }
-console.log(refs.input);
+eventInput();
